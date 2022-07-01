@@ -1,4 +1,4 @@
-- Para adicionar um novo campo (nova coluna), usaremos o comando `ALTER TABLE node_tabela ADD COLUMN nome_campo_novo valor_novo_campo`:
+- Para adicionar um novo campo (nova coluna), usaremos o comando `ALTER TABLE nome_tabela ADD COLUMN nome_campo_novo valor_novo_campo`:
 
 ```MySQL
 ALTER TABLE pessoas
@@ -39,7 +39,24 @@ CHANGE COLUMN nacionalidade nac varchar(20) NOT NULL DEFAULT 'Brasil';
 ```
 
 - Renomear o nome da tabela. Usar `RENAME TO novo_nome`:
+
 ```MySQL
 ALTER TABLE pessoas
 RENAME TO peoples;
 ```
+
+- Caso precise adicionar uma primary key após ter criado a tabela, basta usar o `alter table add primary key (nome_coluna)`:
+
+```MySQL
+alter table cursos
+add PRIMARY KEY (idcurso);
+```
+
+- Para EXCLUIR uma tabela inteira com seus registros, use `DROP TABLE nome_tabela`:
+
+```MySQL
+drop table if EXISTS cursos;
+```
+
+- ALTER TABLE - DDL
+- DROP TABLE - DDL
